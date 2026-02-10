@@ -3,6 +3,7 @@ import { useState } from "react";
 import Button from "./Button";
 import api from "../utils/api";
 import React from "react";
+import SentryTestComponent from "./SentryTestComponent";
 
 type CategoryFormProps = {
     refetch: () => Promise<void>
@@ -85,6 +86,7 @@ function CategoryForm({ refetch }: CategoryFormProps) {
                     }
                 </div>
                 <Button text="Ajouter une catégorie" onClickFn={addCategory} className="lg:min-w-max"/>
+                <SentryTestComponent />
             </div>
         </section>
 
