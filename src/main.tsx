@@ -4,7 +4,6 @@ import './styles/index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Tasks from './pages/Tasks.tsx';
 import Layout from './components/Layout.tsx';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'

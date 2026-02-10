@@ -6,7 +6,7 @@ import snakecaseKeys from "snakecase-keys";
 export interface ApiClient extends AxiosInstance {}
 
 const api: ApiClient = axios.create({
-  baseURL: "http://localhost:8000/api/",
+  baseURL: `${import.meta.env.VITE_API_URL}/api`,
 });
 {/* Mise en place d'intercepteurs pour convertir le format des clés des données au format JSON entrantes et sortantes, la norme JS utilisant la camelCase et la norme Python utilisant le snake_case */}
 {/* Conversion camelCase vers snake_case */}
