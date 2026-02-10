@@ -20,12 +20,10 @@ export default function Tasks() {
 
     const changeSelectedCategory = (category: Category) => {
         setSelectedCategory(category)
-        console.log("changement de categ")
         if (category === defaultCategory) {
             setTaskFilters(undefined)
         }
         else {
-            console.log("Changement de filtre")
             const newFilters = {
                 'category': String(category.id)
             }
