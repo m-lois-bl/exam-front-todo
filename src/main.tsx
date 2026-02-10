@@ -24,9 +24,9 @@ const router = createBrowserRouter([
     ]
   },
 ])
-// if (import.meta.env.PROD) {
+if (import.meta.env.PROD) {
   Sentry.init({
-    dsn: `${import.meta.env.VITE_SENTRY_DSN}`,
+    dsn: import.meta.env.VITE_SENTRY_DSN,
 
     integrations: [
       Sentry.browserTracingIntegration(),
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
     replaysSessionSampleRate: 0.1, 
     replaysOnErrorSampleRate: 1.0, 
   });
-// }
+}
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
