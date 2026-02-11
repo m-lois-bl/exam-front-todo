@@ -54,8 +54,6 @@ export default function useFetchPaginated<T>(baseUrl: string, filters?: Record<s
                     signal: controller.signal,
                 }
             );
-            console.log(response)
-            console.log(response.data.results)
             setData(response.data.results);
             setNexttPage(response.data.nextPage);
             setPreviousPage(response.data.previousPage);
@@ -65,7 +63,6 @@ export default function useFetchPaginated<T>(baseUrl: string, filters?: Record<s
             if (controller.signal.aborted || error.code === "ERR_CANCELED") {
                 return;
             }
-            console.log(error)
             setError('Erreur lors de la récupération des données');
             setData(null);
             setNexttPage(null);

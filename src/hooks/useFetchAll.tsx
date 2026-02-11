@@ -45,15 +45,12 @@ export default function useFetchAll<T>(baseUrl: string, filters?: Record<string,
                     signal: controller.signal,
                 }
             );
-            console.log(response)
-            console.log(response.data)
             setData(response.data);
             setError(null);
         } catch (error: any) {
             if (controller.signal.aborted || error.code === "ERR_CANCELED") {
                 return;
             }
-            console.log(error)
             setError('Erreur lors de la récupération des données');
             setData(null);
         } finally {
@@ -68,14 +65,11 @@ export default function useFetchAll<T>(baseUrl: string, filters?: Record<string,
 
         if (filters !== undefined) {
             let filterChain = '?'
-            console.log(filters)
             Object.entries(filters).forEach(([key, value]) => {
                 filterChain = filterChain.concat(`${key}=${value}&`)
             })
             filterChain = filterChain.slice(0, -1)
-            console.log(filterChain)
             baseUrl = baseUrl.concat(filterChain)
-            console.log(baseUrl)
         }
         fetchData();
         return () => {

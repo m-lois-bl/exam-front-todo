@@ -28,8 +28,6 @@ function TaskForm({ categories, refetch }: TaskFormProps) {
                 "tasks/",
                 newTaskData
             )
-            console.log(response.data)
-            console.log(response.status)
             setResponseStatus(response.status)
             setTaskDescription('')
             setTaskCategory(categories[0].id)

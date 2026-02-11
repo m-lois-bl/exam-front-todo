@@ -21,8 +21,6 @@ function CategoryForm({ refetch }: CategoryFormProps) {
                 "categories/",
                 newCategoryData
             )
-            console.log(response.data)
-            console.log(response.status)
             setCategoryName('');
             setResponseStatus(response.status)
             await refetch()
@@ -86,7 +84,8 @@ function CategoryForm({ refetch }: CategoryFormProps) {
                     }
                 </div>
                 <Button text="Ajouter une catégorie" onClickFn={addCategory} className="lg:min-w-max"/>
-                <SentryTestComponent />
+                {/* La ligne ci-dessous peut-être décommentée pour tester la connexion avec Sentry */}
+                {/* <SentryTestComponent /> */}
             </div>
         </section>
 
