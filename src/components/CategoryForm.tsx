@@ -3,7 +3,6 @@ import { useState } from "react";
 import Button from "./Button";
 import api from "../utils/api";
 import React from "react";
-import SentryTestComponent from "./SentryTestComponent";
 
 type CategoryFormProps = {
     refetch: () => Promise<void>
